@@ -11,27 +11,31 @@ const useApiAsDB = true;
 export async function getStaticProps() {
 
   if(useFileSystemAsDB) {
-    const allPostsData = getSortedPostsData()
+    const staticGenerationPostsData = getSortedPostsData()
     return {
       props: {
-        allPostsData
+        staticGenerationPostsData
       }
     }
   }
 }
 
+
 // Server-Side Rendering
 // export async function getServerSideProps(context) {
+
+//   const res = await fetch("https://admin.jejodo.life/wp-json/v1/routes")
+//   const serverSideRenderingPostsData = await res.json();
 //   return {
 //     props: {
 //       // props for your component
-//       foo: '33'
+//       serverSideRenderingPostsData
 //     }
 //   }
 // }
 
 
-export default function HomePage({allPostsData}) {
+export default function HomePage({staticGenerationPostsData, serverSideRenderingPostsData}) {
   return (
     <Layout home>
     <Head>
