@@ -24,7 +24,7 @@ function generateSiteMap (posts) {
 }
 
 function SiteMap ({}) {
-    return <div>dd</div>
+    return (<></>)
 }
 
 export async function getServerSideProps({ res }) {

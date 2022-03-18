@@ -39,6 +39,7 @@ export default function HomePage({ staticGenerationPostsData, serverSideRenderin
 		<Layout home>
 			<Head>
 				<title>{siteTitle}</title>
+				<SiteMap />
 			</Head>
 			<section className={utilStyles.headingMd}>
 				<p>[Your Self Introduction]</p>
@@ -64,7 +65,6 @@ export default function HomePage({ staticGenerationPostsData, serverSideRenderin
 					))}
 				</ul>
 			</section>
-			<SiteMap />
 		</Layout>
 	);
 }
