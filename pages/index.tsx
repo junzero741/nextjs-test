@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Layout, { siteTitle } from "../components/layout";
@@ -11,7 +12,7 @@ const useFileSystemAsDB = true;
 const useApiAsDB = true;
 
 // Static Generation
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async context => {
 	if (useFileSystemAsDB) {
 		const staticGenerationPostsData = getSortedPostsData();
 		return {
@@ -35,7 +36,7 @@ export async function getStaticProps() {
 //   }
 // }
 
-export default function HomePage({ staticGenerationPostsData, serverSideRenderingPostsData }) {
+export default function HomePage({ staticGenerationPostsData } : {staticGenerationPostsData : { date: string, title: string, id: string}[]}) {
 	return (
 		<Layout home>
 			<Head>
