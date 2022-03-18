@@ -43,7 +43,7 @@ export default function HomePage({ staticGenerationPostsData, serverSideRenderin
 				<SiteMap />
 			</Head>
 			<section className={homepageStyles.introduce}>
-				<p>개인적인 경험과 개발 지식들을 공유합니다.</p>
+				<p>사적인 경험과 공적인 지식들을 공유합니다.</p>
 			</section>
 
 			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
