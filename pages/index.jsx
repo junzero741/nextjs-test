@@ -4,6 +4,7 @@ import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Date from "../components/date";
+import SiteMap from "./sitemap.xml";
 
 const useFileSystemAsDB = true;
 const useApiAsDB = true;
@@ -63,6 +64,7 @@ export default function HomePage({ staticGenerationPostsData, serverSideRenderin
 					))}
 				</ul>
 			</section>
+			<SiteMap />
 		</Layout>
 	);
 }
