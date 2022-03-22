@@ -3,8 +3,6 @@ title: "SEO 최적화를 위한 렌더링 전략 (번역)"
 date: "2022-03-18"
 ---
 
-# SEO 최적화를 위한 렌더링 전략 (번역)
-
 [원문](https://nextjs.org/learn/seo/rendering-and-ranking/rendering-strategies)
 
 <br/>
