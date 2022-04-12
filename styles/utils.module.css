@@ -62,3 +62,10 @@
     display: flex;
     justify-content: center;
 }
+
+  .unselected {
+    color: #999;
+  }
+  .selected {
+    color: #000;
+  }
