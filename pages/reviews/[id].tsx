@@ -1,12 +1,11 @@
 import Head from "next/head";
-import { useState } from "react";
-import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
-import Date from "../../components/date";
-import utilStyles from "../../styles/utils.module.css";
+import Layout from "components/layout";
+import { getAllPostIds, getPostData } from "lib/posts";
+import Date from "components/date";
+import utilStyles from "styles/utils.module.css";
 import { GetStaticPaths, GetStaticProps } from "next";
 
-export default function Post({ postData }: { postData: { title: string; date: string; contentHtml: string; id: string } }) {
+export default function Review({ postData }: { postData: { title: string; date: string; contentHtml: string; id: string } }) {
 	return (
 		<Layout>
 			<Head>
@@ -26,7 +25,7 @@ export default function Post({ postData }: { postData: { title: string; date: st
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-	const paths = getAllPostIds();
+	const paths = getAllPostIds("reviews");
 	return {
 		paths,
 		fallback: false,
@@ -34,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const postData = await getPostData(params.id as string);
+	const postData = await getPostData(params.id as string, "reviews");
 	return {
 		props: {
 			postData,

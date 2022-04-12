@@ -4,17 +4,25 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
-const postsDirectory = path.join(process.cwd(), "posts");
+export function getDirectoryPath (key : "articles" | "reviews") {
+	const directoryMap = {
+		"articles" : "articles",
+		"reviews" : "reviews"
+	}
 
-export function getSortedPostsData() {
+	return path.join(process.cwd(), directoryMap[key]);
+}
+
+export function getSortedPostsData(key : "articles" | "reviews") {
 	// Get file names under /posts
-	const fileNames = fs.readdirSync(postsDirectory);
+
+	const fileNames = fs.readdirSync(getDirectoryPath(key));
 	const allPostsData = fileNames.map((fileName) => {
 		// Remove ".md" from file name to get id
 		const id = fileName.replace(/\.md$/, "");
 
 		// Read markdown file as string
-		const fullPath = path.join(postsDirectory, fileName);
+		const fullPath = path.join(getDirectoryPath(key), fileName);
 		const fileContents = fs.readFileSync(fullPath, "utf8");
 
 		// Use gray-matter to parse the post metadata section
@@ -36,8 +44,8 @@ export function getSortedPostsData() {
 	})
 }
 
-export function getAllPostIds() {
-	const fileNames = fs.readdirSync(postsDirectory);
+export function getAllPostIds(key : "articles" | "reviews") {
+	const fileNames = fs.readdirSync(getDirectoryPath(key));
 
 	return fileNames.map((fileName) => {
 		return {
@@ -48,8 +56,8 @@ export function getAllPostIds() {
 	});
 }
 
-export async function getPostData(id : string) {
-	const fullPath = path.join(postsDirectory, `${id}.md`);
+export async function getPostData(id : string, key : "reviews" | "articles") {
+	const fullPath = path.join(getDirectoryPath(key), `${id}.md`);
 	const fileContents = fs.readFileSync(fullPath, "utf8");
 
 	// Use gray-matter to parse the post metadata section
