@@ -32,8 +32,8 @@ export default function ArticlesPage({ staticGeneratedArticles } : {staticGenera
 
 			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
 				<div className={utilStyles.flex} style={{justifyContent:'flex-start', gap: '1rem'}}>
-					<Link href="/reviews"><a><h2 className={utilStyles.headingLg}>경험</h2></a></Link>
-					<Link href="/articles"><a><h2 className={utilStyles.headingLg}>지식</h2></a></Link>
+				<Link href="/reviews"><a style={{color:"#999"}} ><h2 className={utilStyles.headingLg}>경험</h2></a></Link>
+					<Link href="/articles"><a style={{color:"#000"}}><h2 className={utilStyles.headingLg}>지식</h2></a></Link>
 				</div>
 				<ul className={utilStyles.list}>
 					{staticGeneratedArticles.map(({ id, date, title }) => (

@@ -37,7 +37,8 @@ export default function Layout({ children, home } : {children : React.ReactNode,
               width={144}
               alt={name}
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            
+            <a style={{color: '#000'}} href="mailto:junzero741@gmail.com"><h1 className={utilStyles.heading2Xl}>{name}</h1></a>
           </>
         ) : (
           <>
@@ -54,9 +55,7 @@ export default function Layout({ children, home } : {children : React.ReactNode,
               </a>
             </Link>
             <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
+                <a style={{color: '#000'}} href="mailto:junzero741@gmail.com">{name}</a>
             </h2>
           </>
         )}
