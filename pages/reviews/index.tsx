@@ -6,6 +6,7 @@ import utilStyles from "styles/utils.module.css";
 import { getSortedPostsData } from "lib/posts";
 import Date from "components/date";
 import SiteMap from "pages/sitemap.xml";
+import NavBar from "components/NavBar";
 
 // Static Generation
 export const getStaticProps: GetStaticProps = async context => {
@@ -31,10 +32,7 @@ export default function ReviewsPage({ staticGeneratedReviews } : {staticGenerate
 			</section>
 
 			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-				<div className={utilStyles.flex} style={{justifyContent:'flex-start', gap: '1rem'}}>
-					<Link href="/reviews"><a style={{color:"#000"}} ><h2 className={utilStyles.headingLg}>경험</h2></a></Link>
-					<Link href="/articles"><a style={{color:"#999"}}><h2 className={utilStyles.headingLg}>지식</h2></a></Link>
-				</div>
+				<NavBar currentPageId="reviews" />
 				<ul className={utilStyles.list}>
 					{staticGeneratedReviews.map(({ id, date, title }) => (
 						<li className={utilStyles.listItem} key={id}>

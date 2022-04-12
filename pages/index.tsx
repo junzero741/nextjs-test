@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout, {siteTitle} from "components/layout";
 import utilStyles from "styles/utils.module.css";
 import SiteMap from "./sitemap.xml";
+import NavBar from "components/NavBar";
 
 
 // Static Generation
@@ -41,10 +42,7 @@ export default function HomePage() {
 			</section>
 
 			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-				<div className={utilStyles.flex} style={{justifyContent:'flex-start', gap: '1rem'}}>
-				<Link href="/reviews"><a style={{color:"#999"}} ><h2 className={utilStyles.headingLg}>경험</h2></a></Link>
-					<Link href="/articles"><a style={{color:"#999"}}><h2 className={utilStyles.headingLg}>지식</h2></a></Link>
-				</div>
+				<NavBar />
 			</section>
 		</Layout>
 	);
