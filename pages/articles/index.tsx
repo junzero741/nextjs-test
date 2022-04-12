@@ -4,33 +4,21 @@ import Link from "next/link";
 import Layout, {siteTitle} from "components/layout";
 import utilStyles from "styles/utils.module.css";
 import { getSortedPostsData } from "lib/posts";
-import SiteMap from "./sitemap.xml";
-
+import Date from "components/date";
+import SiteMap from "pages/sitemap.xml";
 
 // Static Generation
-// export const getStaticProps: GetStaticProps = async context => {
-// 		const staticGeneratedArticles = getSortedPostsData("articles");
-// 		return {
-// 			props: {
-// 				staticGeneratedArticles,
-// 			},
-// 		};
-// }
+export const getStaticProps: GetStaticProps = async context => {
+		const staticGeneratedArticles = getSortedPostsData("articles");
+		return {
+			props: {
+				staticGeneratedArticles,
+			},
+		};
+}
 
-// Server-Side Rendering
-// export async function getServerSideProps(context) {
 
-//   const res = await fetch("https://admin.jejodo.life/wp-json/v1/routes")
-//   const serverSideRenderingPostsData = await res.json();
-//   return {
-//     props: {
-//       // props for your component
-//       serverSideRenderingPostsData
-//     }
-//   }
-// }
-
-export default function HomePage() {
+export default function HomePage({ staticGeneratedArticles } : {staticGeneratedArticles : { date: string, title: string, id: string}[]}) {
 
 	return (
 		<Layout home>
@@ -47,7 +35,7 @@ export default function HomePage() {
 					<Link href="/reviews"><a><h2 className={utilStyles.headingLg}>경험</h2></a></Link>
 					<Link href="/articles"><a><h2 className={utilStyles.headingLg}>지식</h2></a></Link>
 				</div>
-				{/* <ul className={utilStyles.list}>
+				<ul className={utilStyles.list}>
 					{staticGeneratedArticles.map(({ id, date, title }) => (
 						<li className={utilStyles.listItem} key={id}>
 							<Link href={`/articles/${id}`}><a>{title}</a></Link>							
@@ -55,7 +43,7 @@ export default function HomePage() {
 							<small className={utilStyles.lightText}><Date dateString={date} /></small>
 						</li>
 					))}
-				</ul> */}
+				</ul>
 			</section>
 		</Layout>
 	);

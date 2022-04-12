@@ -1,12 +1,11 @@
 import Head from "next/head";
-import { useState } from "react";
-import Layout from "../../components/layout";
-import { getAllPostIds, getPostData } from "../../lib/posts";
-import Date from "../../components/date";
-import utilStyles from "../../styles/utils.module.css";
+import Layout from "components/layout";
+import { getAllPostIds, getPostData } from "lib/posts";
+import Date from "components/date";
+import utilStyles from "styles/utils.module.css";
 import { GetStaticPaths, GetStaticProps } from "next";
 
-export default function Post({ postData }: { postData: { title: string; date: string; contentHtml: string; id: string } }) {
+export default function Article({ postData }: { postData: { title: string; date: string; contentHtml: string; id: string } }) {
 	return (
 		<Layout>
 			<Head>
