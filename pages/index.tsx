@@ -14,10 +14,10 @@ const useApiAsDB = true;
 // Static Generation
 export const getStaticProps: GetStaticProps = async context => {
 	if (useFileSystemAsDB) {
-		const staticGenerationPostsData = getSortedPostsData();
+		const staticGeneratedArticles = getSortedPostsData("articles");
 		return {
 			props: {
-				staticGenerationPostsData,
+				staticGeneratedArticles,
 			},
 		};
 	}
@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps = async context => {
 //   }
 // }
 
-export default function HomePage({ staticGenerationPostsData } : {staticGenerationPostsData : { date: string, title: string, id: string}[]}) {
+export default function HomePage({ staticGeneratedArticles } : {staticGeneratedArticles : { date: string, title: string, id: string}[]}) {
 	return (
 		<Layout home>
 			<Head>
@@ -50,7 +50,7 @@ export default function HomePage({ staticGenerationPostsData } : {staticGenerati
 			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
 				<h2 className={utilStyles.headingLg}>Blog</h2>
 				<ul className={utilStyles.list}>
-					{staticGenerationPostsData.map(({ id, date, title }) => (
+					{staticGeneratedArticles.map(({ id, date, title }) => (
 						<li className={utilStyles.listItem} key={id}>
 							<Link href={`/posts/${id}`}><a>{title}</a></Link>							
 							<br />

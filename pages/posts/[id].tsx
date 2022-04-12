@@ -26,7 +26,7 @@ export default function Post({ postData }: { postData: { title: string; date: st
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-	const paths = getAllPostIds();
+	const paths = getAllPostIds("articles");
 	return {
 		paths,
 		fallback: false,
@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const postData = await getPostData(params.id as string);
+	const postData = await getPostData(params.id as string, "articles");
 	return {
 		props: {
 			postData,
