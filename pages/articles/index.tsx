@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 
-export default function HomePage({ staticGeneratedArticles } : {staticGeneratedArticles : { date: string, title: string, id: string}[]}) {
+export default function ArticlesPage({ staticGeneratedArticles } : {staticGeneratedArticles : { date: string, title: string, id: string}[]}) {
 
 	return (
 		<Layout home>

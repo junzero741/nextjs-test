@@ -47,15 +47,6 @@ export default function HomePage() {
 					<Link href="/reviews"><a><h2 className={utilStyles.headingLg}>경험</h2></a></Link>
 					<Link href="/articles"><a><h2 className={utilStyles.headingLg}>지식</h2></a></Link>
 				</div>
-				{/* <ul className={utilStyles.list}>
-					{staticGeneratedArticles.map(({ id, date, title }) => (
-						<li className={utilStyles.listItem} key={id}>
-							<Link href={`/articles/${id}`}><a>{title}</a></Link>							
-							<br />
-							<small className={utilStyles.lightText}><Date dateString={date} /></small>
-						</li>
-					))}
-				</ul> */}
 			</section>
 		</Layout>
 	);
