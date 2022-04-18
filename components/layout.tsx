@@ -8,15 +8,12 @@ import styled from 'styled-components'
 const name = '준영'
 export const siteTitle = '준영'
 
-export default function Layout({ children, home } : {children : React.ReactNode, home? : boolean}) {
+export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (
     <PageLayout>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Learn how to build a personal website using Next.js" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -26,43 +23,33 @@ export default function Layout({ children, home } : {children : React.ReactNode,
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className='header'>
+      <header className="header">
         {home ? (
           <ImageRoundContainer>
-            <Image
-              priority
-              src="/images/profile.png"
-              
-              height={144}
-              width={144}
-              alt={name}
-            />
-            
-            <a style={{color: '#000'}} href="mailto:junzero741@gmail.com"><Headline style={{textAlign: 'center'}}>{name}</Headline></a>
+            <Image priority src="/images/profile.png" height={144} width={144} alt={name} />
+
+            <a style={{ color: '#000' }} href="mailto:junzero741@gmail.com">
+              <Headline style={{ textAlign: 'center' }}>{name}</Headline>
+            </a>
           </ImageRoundContainer>
         ) : (
           <ImageRoundContainer>
             <Link href="/">
               <a>
-                <Image
-                  priority
-                  src="/images/profile.png"
-                  
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
+                <Image priority src="/images/profile.png" height={108} width={108} alt={name} />
               </a>
             </Link>
-            <SubTitle2>
-                <a style={{color: '#000'}} href="mailto:junzero741@gmail.com">{name}</a>
+            <SubTitle2 style={{textAlign: 'center'}}>
+              <a style={{ color: '#000'}} href="mailto:junzero741@gmail.com">
+                {name}
+              </a>
             </SubTitle2>
           </ImageRoundContainer>
         )}
       </header>
       <main>{children}</main>
       {!home && (
-        <div className='backToHome'>
+        <div className="backToHome">
           <Link href="/">
             <a>← Back to home</a>
           </Link>
@@ -92,12 +79,11 @@ const ImageRoundContainer = styled.div`
   img {
     border-radius: 9999px;
   }
-  
 `
 const SubTitle2 = styled.h2`
-  ${({theme}) => theme.font.subTitle_2};
+  ${({ theme }) => theme.font.subTitle_2};
 `
 
 const Headline = styled.h1`
-  ${({theme}) => theme.font.headline};
+  ${({ theme }) => theme.font.headline};
 `
