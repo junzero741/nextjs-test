@@ -65,7 +65,7 @@ export const GlobalStyle = createGlobalStyle`
     img {
         max-width: 100%;
 	    display: block;
-	    border: 10px solid #ececec;
+	    border: 10px solid ${theme.color.blue};
     }
     .pc-tablet-only {
         display: block;
