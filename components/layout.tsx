@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-// import styles from './layout.module.css'
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
+import ImageRoundContainer from './ImageRoundContainer'
 
 const name = '준영'
 export const siteTitle = '준영'
@@ -29,7 +29,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
             <Image priority src="/images/profile.png" height={144} width={144} alt={name} />
 
             <a style={{ color: '#000' }} href="mailto:junzero741@gmail.com">
-              <Headline style={{ textAlign: 'center' }}>{name}</Headline>
+              <h1 style={{ textAlign: 'center' }}>{name}</h1>
             </a>
           </ImageRoundContainer>
         ) : (
@@ -39,11 +39,11 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
                 <Image priority src="/images/profile.png" height={108} width={108} alt={name} />
               </a>
             </Link>
-            <SubTitle2 style={{textAlign: 'center'}}>
+            <h2 style={{textAlign: 'center'}}>
               <a style={{ color: '#000'}} href="mailto:junzero741@gmail.com">
                 {name}
               </a>
-            </SubTitle2>
+            </h2>
           </ImageRoundContainer>
         )}
       </header>
@@ -75,15 +75,3 @@ const PageLayout = styled.div`
   }
 `
 
-const ImageRoundContainer = styled.div`
-  img {
-    border-radius: 9999px;
-  }
-`
-const SubTitle2 = styled.h2`
-  ${({ theme }) => theme.font.subTitle_2};
-`
-
-const Headline = styled.h1`
-  ${({ theme }) => theme.font.headline};
-`
