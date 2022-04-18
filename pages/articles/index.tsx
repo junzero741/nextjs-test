@@ -43,9 +43,7 @@ export default function ArticlesPage({
                 <a>{title}</a>
               </Link>
               <br />
-              <small>
-                <Date dateString={date} />
-              </small>
+              <Date dateString={date} />
             </li>
           ))}
         </ul>

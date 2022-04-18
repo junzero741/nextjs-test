@@ -12,9 +12,6 @@ const PostListLayout = styled.section`
   li {
     margin: 0 0 1.25rem;
   }
-  small {
-    color: ${({ theme }) => theme.color.lightGray};
-  }
 `
 
 export default PostListLayout;
