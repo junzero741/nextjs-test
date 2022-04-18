@@ -1,24 +1,29 @@
 import { createGlobalStyle } from 'styled-components'
 import { reset } from 'styled-reset'
-import { media } from './theme'
+import { media, theme } from './theme'
 
 export const GlobalStyle = createGlobalStyle`
     ${reset};
-    @font-face {
-        font-family: 'NotoSansKR';
-        src: url('/fonts/NotoSans/NotoSansKR-Black.woff2') format(('woff2'));
-        font-display: swap;
-    }
-    @font-face {
-        font-family: "DOSGothic";
-        src: url("/fonts/DosGothic/DOSGothic.woff2") format("woff2");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
+    html,body {
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	line-height: 1.6;
+	font-size: 18px;
     }
     * {
         box-sizing: border-box;
         letter-spacing: -0.05em;
+    }
+    h1 {
+        ${theme.font.headline};
+    }
+    h2 {
+        ${theme.font.subTitle_1};
+    }
+    h3 {
+        ${theme.font.subTitle_2};
+    }
+    h4 {
+        ${theme.font.subTitle_3};
     }
     :focus {
         outline: none;
@@ -52,10 +57,15 @@ export const GlobalStyle = createGlobalStyle`
     }
     a {
         text-decoration: none;
-        color : #000;
+        color : ${theme.color.purple};
         &:hover {
             text-decoration: underline;
         }
+    }
+    img {
+        max-width: 100%;
+	    display: block;
+	    border: 10px solid #ececec;
     }
     .pc-tablet-only {
         display: block;

@@ -5,6 +5,8 @@ export const theme: DefaultTheme = {
   color: {
     black: '#000000',
     gray: '#999999',
+    lightGray: '#666',
+    purple: '#9c6fca',
     error: '#ff5858',
     correct: '#4498F2',
     yellow: '#ffdc3c',
@@ -12,54 +14,28 @@ export const theme: DefaultTheme = {
   },
   font: {
     headline: css`
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 56px;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      font-weight: 800;
+      letter-spacing:  -0.05rem;
+      margin: 1rem 0;
     `,
     subTitle_1: css`
-      font-size: 28px;
-      line-height: 36px;
-      font-weight: 700;
+      font-size: 2rem;
+      line-height: 1.3;
+      font-weight: 800;
+      letter-spacing:  -0.05rem;
     `,
     subTitle_2: css`
-      font-size: 20px;
-      line-height: 28px;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      margin: 1rem 0;
       font-weight: 700;
     `,
     subTitle_3: css`
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 1.2rem;
+      line-height: 1.5;
       font-weight: 700;
-    `,
-    subTitle_4: css`
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 700;
-    `,
-    body_1: css`
-      font-size: 16px;
-      line-height: 20px;
-      font-weight: 400;
-    `,
-    body_2: css`
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 500;
-    `,
-    mainButton: css`
-      font-size: 20px;
-      line-height: 24px;
-      font-weight: 700;
-    `,
-    button: css`
-      font-size: 14px;
-      line-height: 20px;
-      font-weight: 700;
-    `,
-    caption: css`
-      font-size: 12px;
-      line-height: 16px;
-      font-weight: 400;
     `,
   },
   boxShadow: {

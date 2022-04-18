@@ -5,6 +5,8 @@ declare module 'styled-components' {
     color: {
       black: '#000000'
       gray: '#999999'
+      lightGray: '#666'
+      purple: '#9c6fca'
       error: '#ff5858'
       correct: '#4498F2'
       yellow: '#ffdc3c'
@@ -15,12 +17,6 @@ declare module 'styled-components' {
       subTitle_1: FlattenSimpleInterpolation
       subTitle_2: FlattenSimpleInterpolation
       subTitle_3: FlattenSimpleInterpolation
-      subTitle_4: FlattenSimpleInterpolation
-      body_1 : FlattenSimpleInterpolation
-      body_2 : FlattenSimpleInterpolation
-      mainButton : FlattenSimpleInterpolation
-      button : FlattenSimpleInterpolation
-      caption : FlattenSimpleInterpolation
     }
     boxShadow: {
       card :'4px 0px 10px rgba(0, 0, 0, 0.05)'
