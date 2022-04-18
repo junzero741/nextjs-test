@@ -20,7 +20,7 @@ const PostLayout = styled.article`
   blockquote {
     padding: 0.5rem 0.5rem 0.5rem 1rem;
     margin: 1em 40px;
-    border-left: 4px solid ${({ theme }) => theme.color.purple};
+    border-left: 4px solid ${({ theme }) => theme.color.blue};
   }
 `
 

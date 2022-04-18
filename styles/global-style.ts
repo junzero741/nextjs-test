@@ -57,7 +57,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     a {
         text-decoration: none;
-        color : ${theme.color.purple};
+        color : ${theme.color.blue};
         &:hover {
             text-decoration: underline;
         }

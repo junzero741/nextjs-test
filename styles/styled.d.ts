@@ -8,7 +8,7 @@ declare module 'styled-components' {
       lightGray: '#666'
       purple: '#9c6fca'
       error: '#ff5858'
-      correct: '#4498F2'
+      blue: '#4498F2'
       yellow: '#ffdc3c'
       hoverBg: '#eeeeee'
     }
