@@ -4,8 +4,9 @@ import styled from "styled-components";
 const NavBar = ({currentPageId} : {currentPageId? : string}) => {
     return(
       <Layout>
-					<Link href="/reviews"><a style={{color: currentPageId === "reviews" ? '#000' : '#999'}}><h3>경험</h3></a></Link>
-					<Link href="/articles"><a style={{color: currentPageId === "articles" ? '#000' : '#999'}}><h3>지식</h3></a></Link>
+					<Link href="/reviews"><a style={{color: currentPageId === "reviews" ? '#000' : '#999'}}><h3>리뷰</h3></a></Link>
+					<Link href="/resume"><a style={{color: currentPageId === "resume" ? '#000' : '#999'}}><h3>이력</h3></a></Link>
+					{/* <Link href="/articles"><a style={{color: currentPageId === "articles" ? '#000' : '#999'}}><h3>이력</h3></a></Link> */}
       </Layout>
     )
   }
