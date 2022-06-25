@@ -49,7 +49,8 @@ export default function TodoIndex(props: IndexProps) {
 // GET PROPS FOR SERVER SIDE RENDERING
 export async function getServerSideProps() {
   // get todo data from API
-  const res = await fetch(process.env.API_TODO as string)
+  const api = process.env.NODE_ENV === "development" ? process.env.DEV_API_TODO : process.env.PREVIEW_API_TODO
+  const res = await fetch(api as string)
   const todos = await res.json()
   
 
