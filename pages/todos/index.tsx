@@ -33,7 +33,7 @@ export default function TodoIndex(props: IndexProps) {
           {/* MAPPING OVER THE TODOS */}
           {todos.map(t => (
         <div key={t._id}>
-          <Link href={`/todos/${t._id}`}>
+          <Link href={`/api/todos/${t._id}`}>
             <h3 style={{ cursor: "pointer" }}>
               {t.item} - {t.completed ? "completed" : "incomplete"}
             </h3>
