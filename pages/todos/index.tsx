@@ -5,6 +5,7 @@ import Head from 'next/head'
 import SiteMap from 'pages/sitemap.xml'
 import NavBar from 'components/NavBar'
 import { Introduce } from 'pages'
+import { BASE_API_URL } from 'utils/vars'
 
 // Define the component props
 interface IndexProps {
@@ -49,8 +50,7 @@ export default function TodoIndex(props: IndexProps) {
 // GET PROPS FOR SERVER SIDE RENDERING
 export async function getServerSideProps() {
   // get todo data from API
-  const api = process.env.NODE_ENV === "development" ? process.env.DEV_API_TODO : process.env.PREVIEW_API_TODO
-  const res = await fetch(api as string)
+  const res = await fetch(BASE_API_URL + "/todos" as string)
   const todos = await res.json()
   
 
