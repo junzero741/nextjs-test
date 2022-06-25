@@ -1,7 +1,6 @@
 import Head from "next/head";
-import Link from "next/link";
+import styled from "styled-components";
 import Layout, {siteTitle} from "components/layout";
-import utilStyles from "styles/utils.module.css";
 import SiteMap from "./sitemap.xml";
 import NavBar from "components/NavBar";
 
@@ -37,13 +36,16 @@ export default function HomePage() {
 				<title>{siteTitle}</title>
 				<SiteMap />
 			</Head>
-			<section className={utilStyles.introduce}>
+			<Introduce>
 				<p>사적인 경험과 공적인 지식들을 공유합니다.</p>
-			</section>
-
-			<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+			</Introduce>
 				<NavBar />
-			</section>
 		</Layout>
 	);
 }
+
+export const Introduce = styled.section`
+	display: flex;
+	justify-content: center;
+	color: ${({theme}) => theme.color.gray};
+`

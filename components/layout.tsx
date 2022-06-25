@@ -1,22 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import React from 'react'
+import styled from 'styled-components'
+import ImageRoundContainer from './ImageRoundContainer'
 
 const name = '준영'
 export const siteTitle = '준영'
 
-export default function Layout({ children, home } : {children : React.ReactNode, home? : boolean}) {
+export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (
-    <div className={styles.container}>
+    <PageLayout>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Learn how to build a personal website using Next.js" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -26,48 +23,55 @@ export default function Layout({ children, home } : {children : React.ReactNode,
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className="header">
         {home ? (
-          <>
-            <Image
-              priority
-              src="/images/profile.png"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            />
-            
-            <a style={{color: '#000'}} href="mailto:junzero741@gmail.com"><h1 className={utilStyles.heading2Xl}>{name}</h1></a>
-          </>
+          <ImageRoundContainer>
+            <Image priority src="/images/profile.png" height={144} width={144} alt={name} />
+
+            <a style={{ color: '#000' }} href="mailto:junzero741@gmail.com">
+              <h1 style={{ textAlign: 'center' }}>{name}</h1>
+            </a>
+          </ImageRoundContainer>
         ) : (
-          <>
+          <ImageRoundContainer>
             <Link href="/">
               <a>
-                <Image
-                  priority
-                  src="/images/profile.png"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
+                <Image priority src="/images/profile.png" height={108} width={108} alt={name} />
               </a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
-                <a style={{color: '#000'}} href="mailto:junzero741@gmail.com">{name}</a>
+            <h2 style={{textAlign: 'center'}}>
+              <a style={{ color: '#000'}} href="mailto:junzero741@gmail.com">
+                {name}
+              </a>
             </h2>
-          </>
+          </ImageRoundContainer>
         )}
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className="backToHome">
           <Link href="/">
             <a>← Back to home</a>
           </Link>
         </div>
       )}
-    </div>
+    </PageLayout>
   )
 }
+
+const PageLayout = styled.div`
+  max-width: 36rem;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .backToHome {
+    margin: 3rem 0 0;
+  }
+`
+

@@ -4,16 +4,15 @@ import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
 
-export function getDirectoryPath (key : "articles" | "reviews") {
+export function getDirectoryPath (key : "reviews") {
 	const directoryMap = {
-		"articles" : "articles",
 		"reviews" : "reviews"
 	}
 
 	return path.join(process.cwd(), directoryMap[key]);
 }
 
-export function getSortedPostsData(key : "articles" | "reviews") {
+export function getSortedPostsData(key : "reviews") {
 	// Get file names under /posts
 
 	const fileNames = fs.readdirSync(getDirectoryPath(key));
@@ -44,7 +43,7 @@ export function getSortedPostsData(key : "articles" | "reviews") {
 	})
 }
 
-export function getAllPostIds(key : "articles" | "reviews") {
+export function getAllPostIds(key : "reviews") {
 	const fileNames = fs.readdirSync(getDirectoryPath(key));
 
 	return fileNames.map((fileName) => {
@@ -56,7 +55,7 @@ export function getAllPostIds(key : "articles" | "reviews") {
 	});
 }
 
-export async function getPostData(id : string, key : "reviews" | "articles") {
+export async function getPostData(id : string, key : "reviews") {
 	const fullPath = path.join(getDirectoryPath(key), `${id}.md`);
 	const fileContents = fs.readFileSync(fullPath, "utf8");
 
