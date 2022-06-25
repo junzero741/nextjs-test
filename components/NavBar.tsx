@@ -6,7 +6,7 @@ const NavBar = ({currentPageId} : {currentPageId? : string}) => {
       <Layout>
 					<Link href="/reviews"><a style={{color: currentPageId === "reviews" ? '#000' : '#999'}}><h3>리뷰</h3></a></Link>
 					<Link href="/resume"><a style={{color: currentPageId === "resume" ? '#000' : '#999'}}><h3>이력</h3></a></Link>
-					{/* <Link href="/articles"><a style={{color: currentPageId === "articles" ? '#000' : '#999'}}><h3>이력</h3></a></Link> */}
+					<Link href="/todos"><a style={{color: currentPageId === "todos" ? '#000' : '#999'}}><h3>할일</h3></a></Link>
       </Layout>
     )
   }
