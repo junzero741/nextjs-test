@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { connect } from "../../../utils/connection"
 import { ResponseFuncs } from "../../../utils/types"
+import Todo from "models/todo"
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   //capture request method, we type it as a key of ResponseFunc to reduce typing later
@@ -13,8 +14,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const handleCase: ResponseFuncs = {
     // RESPONSE FOR GET REQUESTS
     GET: async (req: NextApiRequest, res: NextApiResponse) => {
-      const { Todo } = await connect() // connect to database
-      res.json(await Todo.find().catch(catcher))
+      try {
+        await connect() // connect to database
+        res.json(await Todo.find())
+        // res.json(await Todo.find().catch(catcher))
+      } catch(err) {
+        catcher(err)
+      }
     },
     // RESPONSE POST REQUESTS
     // POST 요청 주체가 admin 인지 검사 한 후 아래 api 를 추가하자.
