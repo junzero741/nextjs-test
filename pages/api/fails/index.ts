@@ -1,6 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import { connect } from "utils/failBoardConnection"
+import { connect } from "utils/connection"
 import { ResponseFuncs } from "../../../utils/types"
+import Fail from "models/fail"
+
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   //capture request method, we type it as a key of ResponseFunc to reduce typing later
@@ -13,8 +15,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const handleCase: ResponseFuncs = {
     // RESPONSE FOR GET REQUESTS
     GET: async (req: NextApiRequest, res: NextApiResponse) => {
-      const { Fail } = await connect() // connect to database
-      res.json(await Fail.find().catch(catcher))
+      try {
+        await connect() // connect to database
+        res.json(await Fail.find())
+      } catch (err) {
+        catcher(err)
+      }
     },
     // RESPONSE POST REQUESTS
     // POST 요청 주체가 admin 인지 검사 한 후 아래 api 를 추가하자.
