@@ -7,6 +7,7 @@ import ImageRoundContainer from './ImageRoundContainer'
 
 const name = '준영'
 export const siteTitle = '준영'
+const isLogin = false;
 
 export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (
@@ -26,7 +27,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
       <header className="header">
         {home ? (
           <ImageRoundContainer>
-            <Image priority src="/images/profile.png" height={144} width={144} alt={name} />
+            <Link href={isLogin? "/logout" : "/login"}><a><Image priority src="/images/profile.png" height={144} width={144} alt={name} /></a></Link>
 
             <a style={{ color: '#000' }} href="mailto:junzero741@gmail.com">
               <h1 style={{ textAlign: 'center' }}>{name}</h1>
@@ -34,7 +35,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
           </ImageRoundContainer>
         ) : (
           <ImageRoundContainer>
-            <Link href="/">
+            <Link href={isLogin? "/logout" : "/login"}>
               <a>
                 <Image priority src="/images/profile.png" height={108} width={108} alt={name} />
               </a>
