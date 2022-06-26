@@ -31,16 +31,13 @@ export default function FailBoardIndex(props: IndexProps) {
         <div>
           <h1>My Fail List</h1>
           <h2>Click On Title to see it individually</h2>
-          {/* MAPPING OVER THE TODOS */}
-          {fails.map(t => (
-        <div key={t._id}>
-          <Link href={`/api/fails/${t._id}`}>
-            <h3 style={{ cursor: "pointer" }}>
-              {t.summary}
-            </h3>
-          </Link>
-        </div>
-      ))}
+          {fails.map((t) => (
+            <div key={t._id}>
+              <Link href={`/api/fails/${t._id}`}>
+                <h3 style={{ cursor: 'pointer' }}>{t.summary}</h3>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </Layout>
@@ -49,10 +46,8 @@ export default function FailBoardIndex(props: IndexProps) {
 
 // GET PROPS FOR SERVER SIDE RENDERING
 export async function getServerSideProps() {
-  // get todo data from API
-  const res = await fetch(BASE_API_URL + "/fails" as string)
+  const res = await fetch((BASE_API_URL + '/fails') as string)
   const fails = await res.json()
-  
 
   // return props
   return {

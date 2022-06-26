@@ -32,15 +32,15 @@ export default function TodoIndex(props: IndexProps) {
           <h1>My Todo List</h1>
           <h2>Click On Todo to see it individually</h2>
           {/* MAPPING OVER THE TODOS */}
-          {todos.map(t => (
-        <div key={t._id}>
-          <Link href={`/api/todos/${t._id}`}>
-            <h3 style={{ cursor: "pointer" }}>
-              {t.item} - {t.completed ? "completed" : "incomplete"}
-            </h3>
-          </Link>
-        </div>
-      ))}
+          {todos.map((t) => (
+            <div key={t._id}>
+              <Link href={`/api/todos/${t._id}`}>
+                <h3 style={{ cursor: 'pointer' }}>
+                  {t.item} - {t.completed ? 'completed' : 'incomplete'}
+                </h3>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </Layout>
@@ -50,9 +50,8 @@ export default function TodoIndex(props: IndexProps) {
 // GET PROPS FOR SERVER SIDE RENDERING
 export async function getServerSideProps() {
   // get todo data from API
-  const res = await fetch(BASE_API_URL + "/todos" as string)
+  const res = await fetch((BASE_API_URL + '/todos') as string)
   const todos = await res.json()
-  
 
   // return props
   return {
