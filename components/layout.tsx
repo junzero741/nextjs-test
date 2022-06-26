@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import styled from 'styled-components'
+import Contact from './Contact'
 import ImageRoundContainer from './ImageRoundContainer'
 
 const name = '준영'
@@ -29,9 +30,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
           <ImageRoundContainer>
             <Link href={isLogin? "/logout" : "/login"}><a><Image priority src="/images/profile.png" height={144} width={144} alt={name} /></a></Link>
 
-            <a style={{ color: '#000' }} href="mailto:junzero741@gmail.com">
-              <h1 style={{ textAlign: 'center' }}>{name}</h1>
-            </a>
+            <Contact home/>
           </ImageRoundContainer>
         ) : (
           <ImageRoundContainer>
@@ -40,11 +39,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
                 <Image priority src="/images/profile.png" height={108} width={108} alt={name} />
               </a>
             </Link>
-            <h2 style={{textAlign: 'center'}}>
-              <a style={{ color: '#000'}} href="mailto:junzero741@gmail.com">
-                {name}
-              </a>
-            </h2>
+            <Contact />
           </ImageRoundContainer>
         )}
       </header>
