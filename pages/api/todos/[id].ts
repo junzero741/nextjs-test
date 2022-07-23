@@ -16,20 +16,18 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const handleCase: ResponseFuncs = {
     // RESPONSE FOR GET REQUESTS
     GET: async (req: NextApiRequest, res: NextApiResponse) => {
-      const { Todo } = await connect() // connect to database
-      res.json(await Todo.findById(id).catch(catcher))
+      const v = await connect() // connect to database
+      // res.json(await Todo.findById(id).catch(catcher))
     },
     // RESPONSE PUT REQUESTS
     PUT: async (req: NextApiRequest, res: NextApiResponse) => {
-      const { Todo } = await connect() // connect to database
-      res.json(
-        await Todo.findByIdAndUpdate(id, req.body, { new: true }).catch(catcher)
-      )
+      const v = await connect() // connect to database
+      // res.json(await Todo.findByIdAndUpdate(id, req.body, { new: true }).catch(catcher))
     },
     // RESPONSE FOR DELETE REQUESTS
     DELETE: async (req: NextApiRequest, res: NextApiResponse) => {
-      const { Todo } = await connect() // connect to database
-      res.json(await Todo.findByIdAndRemove(id).catch(catcher))
+      const v = await connect() // connect to database
+      // res.json(await Todo.findByIdAndRemove(id).catch(catcher))
     },
   }
 
