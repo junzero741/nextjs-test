@@ -44,12 +44,10 @@ export default function FailBoardIndex(props: IndexProps) {
   )
 }
 
-// GET PROPS FOR SERVER SIDE RENDERING
 export async function getServerSideProps() {
   const res = await fetch((BASE_API_URL + '/fails') as string)
   const fails = await res.json()
 
-  // return props
   return {
     props: { fails },
   }
