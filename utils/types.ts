@@ -1,4 +1,3 @@
-// Interface to defining our object of response functions
 export interface ResponseFuncs {
   GET?: Function
   POST?: Function
@@ -6,7 +5,6 @@ export interface ResponseFuncs {
   DELETE?: Function
 }
 
-// Interface to define our Todo model on the frontend
 export interface Todo {
   _id?: number
   item: string

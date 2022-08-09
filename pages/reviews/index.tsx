@@ -9,7 +9,6 @@ import NavBar from 'components/NavBar'
 import { Introduce } from 'pages'
 import PostListLayout from 'components/PostListLayout'
 
-// Static Generation
 export const getStaticProps: GetStaticProps = async (context) => {
   const staticGeneratedReviews = getSortedPostsData('reviews')
   return {

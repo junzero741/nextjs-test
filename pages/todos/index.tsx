@@ -7,12 +7,10 @@ import NavBar from 'components/NavBar'
 import { Introduce } from 'pages'
 import { BASE_API_URL } from 'utils/vars'
 
-// Define the component props
 interface IndexProps {
   todos: Array<Todo>
 }
 
-// Define the page component
 export default function TodoIndex(props: IndexProps) {
   const { todos } = props
 
@@ -47,13 +45,10 @@ export default function TodoIndex(props: IndexProps) {
   )
 }
 
-// GET PROPS FOR SERVER SIDE RENDERING
 export async function getServerSideProps() {
-  // get todo data from API
   const res = await fetch((BASE_API_URL + '/todos') as string)
   const todos = await res.json()
 
-  // return props
   return {
     props: { todos },
   }
