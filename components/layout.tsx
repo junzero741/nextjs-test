@@ -8,7 +8,7 @@ import ImageRoundContainer from './ImageRoundContainer'
 
 const name = '준영'
 export const siteTitle = '준영'
-const isLogin = false;
+const isLogin = false
 
 export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (
@@ -28,13 +28,17 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
       <header className="header">
         {home ? (
           <ImageRoundContainer>
-            <Link href={isLogin? "/logout" : "/login"}><a><Image priority src="/images/profile.png" height={144} width={144} alt={name} /></a></Link>
+            <Link href={isLogin ? '/logout' : '/login'}>
+              <a>
+                <Image priority src="/images/profile.png" height={144} width={144} alt={name} />
+              </a>
+            </Link>
 
-            <Contact home/>
+            <Contact home />
           </ImageRoundContainer>
         ) : (
           <ImageRoundContainer>
-            <Link href={isLogin? "/logout" : "/login"}>
+            <Link href={isLogin ? '/logout' : '/login'}>
               <a>
                 <Image priority src="/images/profile.png" height={108} width={108} alt={name} />
               </a>
@@ -70,4 +74,3 @@ const PageLayout = styled.div`
     margin: 3rem 0 0;
   }
 `
-

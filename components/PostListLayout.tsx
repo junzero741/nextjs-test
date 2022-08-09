@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const PostListLayout = styled.section`
   ${({ theme }) => theme.font.subTitle_3};
@@ -14,4 +14,4 @@ const PostListLayout = styled.section`
   }
 `
 
-export default PostListLayout;
+export default PostListLayout

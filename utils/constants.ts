@@ -1,1 +1,1 @@
-export const EMAIL = "https://github.com/junzero741"
+export const EMAIL = 'https://github.com/junzero741'

@@ -1,6 +1,6 @@
 ---
-title: "SEO 최적화를 위한 렌더링 전략 (번역)"
-date: "2022-03-18"
+title: 'SEO 최적화를 위한 렌더링 전략 (번역)'
+date: '2022-03-18'
 ---
 
 [원문](https://nextjs.org/learn/seo/rendering-and-ranking/rendering-strategies)
@@ -15,7 +15,6 @@ date: "2022-03-18"
 
 SSG는 [pre-rendered](https://nextjs.org/docs/basic-features/pages#pre-rendering) 방식이기 때문에 SEO 최적화에 있어서 사실상 가장 최선의 방법이라고 알려져 있습니다. (역: pre-rendered 에 대한 아티클은 추후 따로 정리해두겠습니다)
 
-
 뿐만 아니라 이 pre-rendered 방식 덕분에 페이지 퍼포먼스가 향상되는 효과도 누릴 수 있습니다. 이 때 향상된 페이지 퍼포먼스 역시 SEO 에 긍정적인 영향을 주기도 하구요.
 
 <br/>
@@ -23,16 +22,16 @@ SSG는 [pre-rendered](https://nextjs.org/docs/basic-features/pages#pre-rendering
 
 ## 서버 사이드 렌더링 Server-Side Rendering (SSR)
 
-위에서 소개한 SSG와 비슷하게, [서버 사이드 렌더링](https://nextjs.org/docs/basic-features/pages#server-side-rendering) (이하 SSR) 역시 pre-rendered 방식을 사용합니다. 때문에 SSR 도 SEO 최적화에 있어서 좋은 옵션이구요. 
+위에서 소개한 SSG와 비슷하게, [서버 사이드 렌더링](https://nextjs.org/docs/basic-features/pages#server-side-rendering) (이하 SSR) 역시 pre-rendered 방식을 사용합니다. 때문에 SSR 도 SEO 최적화에 있어서 좋은 옵션이구요.
 <br/>
 
 SSG와 구별되는 SSR만의 특징은 **HTML이 유저의 요청이 있을 때 생성**된다는 점입니다. 매우 동적인 페이지를 개발해야 할 때 좋겠죠?
-
 
 <br/>
 <br/>
 
 ## 점진적 정적 페이지 재생성 Incremental Static Regeneration (ISR)
+
 (역: Incremnetal Static Regeneration 에 대한 번역을 어떻게 해야할지 어렵더라구요. 괜찮은 한글 네이밍이 있으시다면 추천해주세요!)
 <br/>
 
@@ -49,14 +48,13 @@ SSG와 구별되는 SSR만의 특징은 **HTML이 유저의 요청이 있을 때
 
 ## 클라이언트 사이드 렌더링 Client Side Rendering (CSR)
 
-[클라이언트 사이드 렌더링](https://nextjs.org/docs/basic-features/data-fetching/client-side) (이하 CSR) 은 브라우저  내 자바스크립트에 의해 사이트가 렌더링되는 방식입니다. 사이트 첫 진입시에 자바스크립트가 로드되고 브라우저가 이를 컴파일하기 전까지는 콘텐츠가 거의, 혹은 전혀 없는 단 하나의 HTML 파일만이 로드됩니다.
+[클라이언트 사이드 렌더링](https://nextjs.org/docs/basic-features/data-fetching/client-side) (이하 CSR) 은 브라우저 내 자바스크립트에 의해 사이트가 렌더링되는 방식입니다. 사이트 첫 진입시에 자바스크립트가 로드되고 브라우저가 이를 컴파일하기 전까지는 콘텐츠가 거의, 혹은 전혀 없는 단 하나의 HTML 파일만이 로드됩니다.
 <br/>
 
 위에서 언급한 것처럼, 일반적인 **CSR은 SEO최적화를 위해서는 추천하지 않습니다.**
 <br/>
 
 CSR은 데이터가 많은 대시보드, 계정 페이지, 혹은 검색 엔진에 의해 인덱싱될 필요가 없는 페이지들에 적용하길 권장합니다.
-
 
 <br/>
 <br/>

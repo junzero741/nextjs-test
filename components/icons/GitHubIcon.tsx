@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const GitHubIcon = ({...props}) => {
+const GitHubIcon = ({ ...props }) => {
   return (
     <IconLayout style={props.style}>
       <svg

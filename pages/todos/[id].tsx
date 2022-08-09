@@ -1,6 +1,3 @@
-
-export default function TodoDetail () {
-    return (
-        <></>
-    )
+export default function TodoDetail() {
+  return <></>
 }

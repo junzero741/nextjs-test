@@ -17,14 +17,14 @@ export const theme: DefaultTheme = {
       font-size: 2.5rem;
       line-height: 1.2;
       font-weight: 800;
-      letter-spacing:  -0.05rem;
+      letter-spacing: -0.05rem;
       margin: 1rem 0;
     `,
     subTitle_1: css`
       font-size: 2rem;
       line-height: 1.3;
       font-weight: 800;
-      letter-spacing:  -0.05rem;
+      letter-spacing: -0.05rem;
     `,
     subTitle_2: css`
       font-size: 1.5rem;
@@ -39,7 +39,7 @@ export const theme: DefaultTheme = {
     `,
   },
   boxShadow: {
-    card :'4px 0px 10px rgba(0, 0, 0, 0.05)',
+    card: '4px 0px 10px rgba(0, 0, 0, 0.05)',
     normal: '0 3px 8px 0 rgb(0 0 0 / 10%)',
     purple: '0 3px 8px 0 #d6c9ff',
     blue: '0 3px 8px 0 #b3e2e6',

@@ -19,7 +19,7 @@ declare module 'styled-components' {
       subTitle_3: FlattenSimpleInterpolation
     }
     boxShadow: {
-      card :'4px 0px 10px rgba(0, 0, 0, 0.05)'
+      card: '4px 0px 10px rgba(0, 0, 0, 0.05)'
       normal: '0 3px 8px 0 rgb(0 0 0 / 10%)'
       purple: '0 3px 8px 0 #d6c9ff'
       blue: '0 3px 8px 0 #b3e2e6'
