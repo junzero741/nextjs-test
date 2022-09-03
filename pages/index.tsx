@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Layout, { siteTitle } from 'components/layout'
 import SiteMap from './sitemap.xml'
 import NavBar from 'components/NavBar'
+import { Text } from 'components/Text'
 
 export default function HomePage() {
   return (
@@ -15,6 +16,9 @@ export default function HomePage() {
         <p>사적인 경험과 공적인 지식들을 공유합니다.</p>
       </Introduce>
       <NavBar />
+      <Text as="a" href="https://naver.com">
+        Hello!
+      </Text>
     </Layout>
   )
 }
