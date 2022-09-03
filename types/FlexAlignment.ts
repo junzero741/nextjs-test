@@ -1,0 +1,10 @@
+export type FlexAlignment =
+  | 'center'
+  | 'flex-start'
+  | 'flex-end'
+  | 'space-between'
+  | 'space-around'
+  | 'space-evenely'
+  | 'stretch'
+  | 'inherit'
+  | 'initial'
