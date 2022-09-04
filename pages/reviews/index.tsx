@@ -1,4 +1,4 @@
-import Layout, { siteTitle } from 'components/Layout'
+import Layout, { siteTitle } from 'components/Temp'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'

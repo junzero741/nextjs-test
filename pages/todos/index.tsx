@@ -1,4 +1,4 @@
-import Layout, { siteTitle } from 'components/Layout'
+import Layout, { siteTitle } from 'components/Temp'
 import { Todo } from 'utils/types'
 import Link from 'next/link'
 import Head from 'next/head'

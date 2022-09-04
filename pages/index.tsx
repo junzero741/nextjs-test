@@ -1,4 +1,4 @@
-import Layout, { siteTitle } from 'components/Layout'
+import Layout, { siteTitle } from 'components/Temp'
 import Head from 'next/head'
 import styled from 'styled-components'
 import SiteMap from './sitemap.xml'
