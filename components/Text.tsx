@@ -1,23 +1,22 @@
-import { PolymorphicComponentProp } from 'types/PolymorphicComponentProp'
+import React from 'react'
+import { PolymorphicComponentPropWithRef, PolymorphicRef } from 'types/PolymorphicComponentProp'
 
 type Rainbow = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'indigo' | 'violet'
 
-type TextProps = {
-  color?: Rainbow | 'black'
-}
+type TextProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<C, { color?: Rainbow | 'black' }>
 
-export const Text = <C extends React.ElementType = 'span'>({
-  as,
-  color,
-  children,
-  ...restProps
-}: PolymorphicComponentProp<C, TextProps>) => {
-  const Component = as || 'span'
-  const style = color ? { style: { color } } : {}
+type TextComponent = <C extends React.ElementType = 'span'>(props: TextProps<C>) => React.ReactElement | null
 
-  return (
-    <Component {...restProps} {...style}>
-      {children}
-    </Component>
-  )
-}
+// eslint-disable-next-line react/display-name
+export const Text: TextComponent = React.forwardRef(
+  <C extends React.ElementType = 'span'>({ as, color, children, ...restProps }: TextProps<C>, ref?: PolymorphicRef<C>) => {
+    const Component = as || 'span'
+    const style = color ? { style: { color } } : {}
+
+    return (
+      <Component {...restProps} {...style} ref={ref}>
+        {children}
+      </Component>
+    )
+  }
+)
