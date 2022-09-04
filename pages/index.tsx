@@ -13,12 +13,9 @@ export default function HomePage() {
         <SiteMap />
       </Head>
       <Introduce>
-        <p>사적인 경험과 공적인 지식들을 공유합니다.</p>
+        <Text as="p">사적인 경험과 공적인 지식들을 공유합니다.</Text>
       </Introduce>
       <NavBar />
-      <Text as="button" disabled color="red">
-        Hello!
-      </Text>
     </Layout>
   )
 }

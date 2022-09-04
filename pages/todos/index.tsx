@@ -6,6 +6,7 @@ import SiteMap from 'pages/sitemap.xml'
 import NavBar from 'components/NavBar'
 import { Introduce } from 'pages'
 import { BASE_API_URL } from 'utils/vars'
+import { Text } from 'components/Text'
 
 interface IndexProps {
   todos: Array<Todo>
@@ -21,13 +22,13 @@ export default function TodoIndex(props: IndexProps) {
         <SiteMap />
       </Head>
       <Introduce>
-        <p>사적인 경험과 공적인 지식들을 공유합니다.</p>
+        <Text as="p">사적인 경험과 공적인 지식들을 공유합니다.</Text>
       </Introduce>
 
       <div>
         <NavBar currentPageId="todos" />
         <div>
-          <h1>My Todo List</h1>
+          <Text as="h1">My Todo List</Text>
           <h2>Click On Todo to see it individually</h2>
           {/* MAPPING OVER THE TODOS */}
           {todos.map((t) => (

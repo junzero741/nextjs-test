@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import styled from 'styled-components'
+import { Text } from './Text'
 
 const NavBar = ({ currentPageId }: { currentPageId?: string }) => {
   return (
     <Layout>
       <Link href="/reviews">
         <a style={{ color: currentPageId === 'reviews' ? '#000' : '#999' }}>
-          <h3>리뷰</h3>
+          <Text as="h3">리뷰</Text>
         </a>
       </Link>
     </Layout>

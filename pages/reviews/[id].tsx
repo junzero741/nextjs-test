@@ -4,6 +4,7 @@ import { getAllPostIds, getPostData } from 'lib/posts'
 import Date from 'components/date'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import PostLayout from 'components/PostLayout'
+import { Text } from 'components/Text'
 
 export default function Review({ postData }: { postData: { title: string; date: string; contentHtml: string; id: string } }) {
   return (
@@ -12,7 +13,7 @@ export default function Review({ postData }: { postData: { title: string; date: 
         <title>{postData.title}</title>
       </Head>
       <PostLayout>
-        <h1>{postData.title}</h1>
+        <Text as="h1">{postData.title}</Text>
         <br />
         <div className="date">
           <Date dateString={postData.date} />

@@ -8,6 +8,7 @@ import SiteMap from 'pages/sitemap.xml'
 import NavBar from 'components/NavBar'
 import { Introduce } from 'pages'
 import PostListLayout from 'components/PostListLayout'
+import { Text } from 'components/Text'
 
 export const getStaticProps: GetStaticProps = async () => {
   const staticGeneratedReviews = getSortedPostsData('reviews')
@@ -26,7 +27,7 @@ export default function ReviewsPage({ staticGeneratedReviews }: { staticGenerate
         <SiteMap />
       </Head>
       <Introduce>
-        <p>사적인 경험과 공적인 지식들을 공유합니다.</p>
+        <Text as="p">사적인 경험과 공적인 지식들을 공유합니다.</Text>
       </Introduce>
 
       <PostListLayout>
