@@ -16,9 +16,7 @@ export default function HomePage() {
         <p>사적인 경험과 공적인 지식들을 공유합니다.</p>
       </Introduce>
       <NavBar />
-      <Text as="a" href="https://naver.com">
-        Hello!
-      </Text>
+      <Text color="red">Hello!</Text>
     </Layout>
   )
 }
