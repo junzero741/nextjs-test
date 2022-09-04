@@ -1,16 +1,17 @@
-import React from 'react'
+import { PolymorphicComponentProp } from 'types/PolymorphicComponentProp'
 
-type Rainbow = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'indigo' | 'purple'
+type Rainbow = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'indigo' | 'violet'
 
-type Props<C extends React.ElementType> = React.PropsWithChildren<TextProps<C>> &
-  Omit<React.ComponentPropsWithoutRef<C>, keyof TextProps<C>>
-
-type TextProps<C extends React.ElementType> = {
-  as?: C
+type TextProps = {
   color?: Rainbow | 'black'
 }
 
-export const Text = <C extends React.ElementType = 'span'>({ as, color, children, ...restProps }: Props<C>) => {
+export const Text = <C extends React.ElementType = 'span'>({
+  as,
+  color,
+  children,
+  ...restProps
+}: PolymorphicComponentProp<C, TextProps>) => {
   const Component = as || 'span'
   const style = color ? { style: { color } } : {}
 

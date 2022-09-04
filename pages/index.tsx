@@ -16,7 +16,9 @@ export default function HomePage() {
         <p>사적인 경험과 공적인 지식들을 공유합니다.</p>
       </Introduce>
       <NavBar />
-      <Text color="red">Hello!</Text>
+      <Text as="button" disabled color="red">
+        Hello!
+      </Text>
     </Layout>
   )
 }
