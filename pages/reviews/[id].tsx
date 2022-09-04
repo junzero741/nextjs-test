@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Layout from 'components/layout'
+import Layout from 'components/Layout'
 import { getAllPostIds, getPostData } from 'lib/posts'
-import Date from 'components/date'
+import Date from 'components/Date'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import PostLayout from 'components/PostLayout'
 import { Text } from 'components/Text'
@@ -34,10 +34,15 @@ export const getStaticPaths: GetStaticPaths = () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params.id as string, 'reviews')
+  if (params) {
+    const postData = await getPostData(params.id as string, 'reviews')
+    return {
+      props: {
+        postData,
+      },
+    }
+  }
   return {
-    props: {
-      postData,
-    },
+    props: {},
   }
 }

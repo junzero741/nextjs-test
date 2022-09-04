@@ -5,14 +5,14 @@ import Fail from 'models/fail'
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const method: keyof ResponseFuncs = req.method as keyof ResponseFuncs
-  const catcher = (error: Error) => res.status(400).json({ error })
+  const catcher = (error: Error | unknown) => res.status(400).json({ error })
 
   const handleCase: ResponseFuncs = {
     GET: async (req: NextApiRequest, res: NextApiResponse) => {
       try {
         await connect() // connect to database
         res.json(await Fail.find())
-      } catch (err) {
+      } catch (err: unknown) {
         catcher(err)
       }
     },
