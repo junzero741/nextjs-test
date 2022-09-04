@@ -1,6 +1,6 @@
+import Layout, { siteTitle } from 'components/Layout'
 import { Todo } from 'utils/types'
 import Link from 'next/link'
-import Layout, { siteTitle } from 'components/Layout'
 import Head from 'next/head'
 import SiteMap from 'pages/sitemap.xml'
 import NavBar from 'components/NavBar'
