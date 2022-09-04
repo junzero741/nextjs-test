@@ -7,16 +7,15 @@ type TextProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<C,
 
 type TextComponent = <C extends React.ElementType = 'span'>(props: TextProps<C>) => React.ReactElement | null
 
-// eslint-disable-next-line react/display-name
-export const Text: TextComponent = React.forwardRef(
-  <C extends React.ElementType = 'span'>({ as, color, children, ...restProps }: TextProps<C>, ref?: PolymorphicRef<C>) => {
-    const Component = as || 'span'
-    const style = color ? { style: { color } } : {}
+const _Text = <C extends React.ElementType = 'span'>({ as, color, children }: TextProps<C>, ref?: PolymorphicRef<C>) => {
+  const Component = as || 'span'
+  const style = color ? { style: { color } } : {}
 
-    return (
-      <Component {...restProps} {...style} ref={ref}>
-        {children}
-      </Component>
-    )
-  }
-)
+  return (
+    <Component {...style} ref={ref}>
+      {children}
+    </Component>
+  )
+}
+
+export const Text: TextComponent = React.forwardRef(_Text)

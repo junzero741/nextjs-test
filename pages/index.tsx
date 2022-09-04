@@ -4,8 +4,11 @@ import Layout, { siteTitle } from 'components/Layout'
 import SiteMap from './sitemap.xml'
 import NavBar from 'components/NavBar'
 import { Text } from 'components/Text'
+import { useRef } from 'react'
 
 export default function HomePage() {
+  const pRef = useRef<HTMLParagraphElement | null>(null)
+
   return (
     <Layout home>
       <Head>
@@ -13,7 +16,9 @@ export default function HomePage() {
         <SiteMap />
       </Head>
       <Introduce>
-        <Text as="p">사적인 경험과 공적인 지식들을 공유합니다.</Text>
+        <Text as="p" ref={pRef}>
+          사적인 경험과 공적인 지식들을 공유합니다.
+        </Text>
       </Introduce>
       <NavBar />
     </Layout>
