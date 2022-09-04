@@ -1,5 +1,5 @@
 import FlexContainer from 'components/FlexContainer'
-import Layout from 'components/Layout'
+import Layout from 'components/Temp'
 import { Text } from 'components/Text'
 import { Introduce } from 'pages'
 
