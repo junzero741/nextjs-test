@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Layout from 'components/Temp'
 import { getAllPostIds, getPostData } from 'lib/posts'
-import Date from 'components/Date'
+import Date from 'components/TempDate'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import PostLayout from 'components/PostLayout'
 import { Text } from 'components/Text'
