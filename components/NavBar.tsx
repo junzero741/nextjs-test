@@ -10,6 +10,11 @@ const NavBar = ({ currentPageId }: { currentPageId?: string }) => {
           <Text as="h3">리뷰</Text>
         </a>
       </Link>
+      <Link href="/todos">
+        <a style={{ color: currentPageId === 'todos' ? '#000' : '#999' }}>
+          <Text as="h3">할일</Text>
+        </a>
+      </Link>
     </Layout>
   )
 }

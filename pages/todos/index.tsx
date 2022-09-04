@@ -28,16 +28,10 @@ export default function TodoIndex(props: IndexProps) {
       <div>
         <NavBar currentPageId="todos" />
         <div>
-          <Text as="h1">My Todo List</Text>
-          <h2>Click On Todo to see it individually</h2>
-          {/* MAPPING OVER THE TODOS */}
+          <Text as="h1">나의 할일 목록</Text>
           {todos.map((t) => (
             <div key={t._id}>
-              <Link href={`/api/todos/${t._id}`}>
-                <h3 style={{ cursor: 'pointer' }}>
-                  {t.item} - {t.completed ? 'completed' : 'incomplete'}
-                </h3>
-              </Link>
+              <h3 style={{ cursor: 'pointer', textDecoration: t.completed ? 'line-through' : 'none' }}>{t.item}</h3>
             </div>
           ))}
         </div>
