@@ -33,7 +33,9 @@ export default function HtmlEditor () {
           content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
         }}
       />
-      <button onClick={log}>Log editor content</button>
+      <button onClick={() => {
+          throw new Error('frontend error!')
+        }}>Log editor content</button>
     </>
   );
 }
