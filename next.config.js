@@ -7,6 +7,7 @@ const { withSentryConfig } = require('@sentry/nextjs')
 // your existing module.exports or default export
 const nextConfig = {
   // Optional build-time configuration options
+  output: 'standalone',
   sentry: {
     // See the sections below for information on the following options:
     //   'Configure Source Maps':
