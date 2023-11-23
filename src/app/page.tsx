@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import Link from 'next/link'
 import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import Post from '@/components/Post';
 
@@ -11,7 +9,7 @@ const client = new S3Client({
   }
 });
 
-export const main = async () => {
+const main = async () => {
   const command = new GetObjectCommand({
     Bucket: "blog.resource",
     Key: "posts/about.md",
