@@ -1,0 +1,10 @@
+@import 'github-markdown-css';
+@import 'highlight.js/styles/atom-one-dark.min.css';
+
+/**
+ * github-markdown-css 의 테마와 highlight.js 의 테마가 충돌하여 
+ * atom-one-dark.min 테마의 색상으로 덮어씌움
+ */
+.markdown-body pre {
+  background-color: #282c34;
+}
