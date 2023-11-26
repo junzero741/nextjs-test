@@ -24,11 +24,12 @@ export default function RootLayout({
           <div className="flex items-center justify-between">             
             <nav className="ml-auto text-sm font-medium space-x-6">
               <Link href="/">Home</Link>
+              <Link href="/posts">Posts</Link>
               <Link href="/about">About</Link>
             </nav>
           </div>
         </header>
-        <main>{children}</main>
+        <main className='py-5'>{children}</main>
       </div>
     </body>
   </html>
