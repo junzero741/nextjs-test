@@ -8,6 +8,7 @@ export default async function PostDetail({ params }: { params: { slug: string } 
   return (
     <div>
       <Suspense fallback={<>Loading...</>}>
+      <div>call : {decodeURIComponent(params.slug)}</div>
         <PostComp post={post} />
       </Suspense>
     </div>
