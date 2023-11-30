@@ -8,11 +8,13 @@ const s3Client = new S3Client({
   }
 });
 
+console.log("S3_CLIENT:: ", s3Client);
 
 
 type GetResource = (path: string) => Promise<GetObjectCommandOutput | undefined>;
 
 const getResource: GetResource = async (path) => {
+  console.log('GET_RESOURCE_BUCKET:: ', process.env.S3_BUCKET);
   const command = new GetObjectCommand({
     Bucket: process.env.S3_BUCKET!,
     Key: path,
@@ -36,6 +38,7 @@ type Resource = {
 type GetResources = (directoryPath: string) => Promise<Resource[] | undefined>;
 
 const getResources: GetResources = async (directoryPath) => {
+  console.log('GET_RESOURCES_BUCKET:: ', process.env.S3_BUCKET);
   const command = new ListObjectsV2Command({
     Bucket: process.env.S3_BUCKET!,
     Prefix: directoryPath
