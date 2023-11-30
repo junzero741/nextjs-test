@@ -1,6 +1,5 @@
 import { GetObjectCommandOutput, GetObjectCommand, ListObjectsV2Command, S3Client, StorageClass } from "@aws-sdk/client-s3";
 
-const BUCKET = process.env.S3_BUCKET!;
 const s3Client = new S3Client({
   region: process.env.S3_REGION!,
   credentials: {
@@ -15,7 +14,7 @@ type GetResource = (path: string) => Promise<GetObjectCommandOutput | undefined>
 
 const getResource: GetResource = async (path) => {
   const command = new GetObjectCommand({
-    Bucket: BUCKET,
+    Bucket: process.env.S3_BUCKET!,
     Key: path,
   });
 
@@ -38,7 +37,7 @@ type GetResources = (directoryPath: string) => Promise<Resource[] | undefined>;
 
 const getResources: GetResources = async (directoryPath) => {
   const command = new ListObjectsV2Command({
-    Bucket: BUCKET,
+    Bucket: process.env.S3_BUCKET!,
     Prefix: directoryPath
   });
 
