@@ -16,7 +16,8 @@ type GetResource = (path: string) => Promise<GetObjectCommandOutput | undefined>
 const getResource: GetResource = async (path) => {
   console.log('GET_RESOURCE_BUCKET:: ', process.env.S3_BUCKET);
   const command = new GetObjectCommand({
-    Bucket: process.env.S3_BUCKET!,
+    Bucket: 'blog.resource',
+    // Bucket: process.env.S3_BUCKET!,
     Key: path,
   });
 
