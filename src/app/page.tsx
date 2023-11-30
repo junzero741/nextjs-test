@@ -1,8 +1,12 @@
-export default async function Home() {
+import PostRepositoryImpl from '@/repository/PostRepositoryImpl';
+import PostMetaListComp from '@/components/PostMetaListComp';
 
+export default async function Home() {
+  const posts = await PostRepositoryImpl.getPosts();
+  
   return (
     <div>
-      <h1 className='text-4xl font-bold'>Junyoung{"'"}s Website</h1>
+      {!!posts ? <PostMetaListComp posts={posts} /> : <>Loading...</>}
     </div>
   )
 }
