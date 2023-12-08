@@ -6,7 +6,7 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Junyoung'
+  title: '정준영'
 }
 
 export default function RootLayout({
