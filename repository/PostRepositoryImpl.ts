@@ -20,10 +20,12 @@ class PostRepositoryImpl implements PostRepository {
   async getPosts () {
     const response = await this.store.getResources('posts/');
     if(response) {
-      return response.map((resource) => ({
-        lastModifed: resource.LastModified!,
-        title: resource.Key?.replace(`${this.postExtension}`, '')!
-      }));
+      return response
+              .map((resource) => ({
+                lastModifed: resource.LastModified!,
+                title: resource.Key?.replace(`${this.postExtension}`, '')!
+              }))
+              .sort((a, b) => b.lastModifed.getTime() - a.lastModifed.getTime());
     }
   }
   
