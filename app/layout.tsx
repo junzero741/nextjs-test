@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html>
     <body
       className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
     >
@@ -29,6 +29,7 @@ export default function RootLayout({
             <nav className="ml-auto text-sm font-medium space-x-6">
               <Link href="/posts">Posts</Link>
               <Link href="/about">About</Link>
+              <Link href="/laboratory">Laboratory</Link>
             </nav>
           </div>
         </header>
