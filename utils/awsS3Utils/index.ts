@@ -4,7 +4,6 @@ import {
 	ListObjectsV2Command,
 	S3Client,
 	StorageClass,
-	ListObjectVersionsCommandOutput,
 	ListObjectsV2CommandOutput,
 } from '@aws-sdk/client-s3';
 

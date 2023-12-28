@@ -4,29 +4,44 @@ import awsS3Utils from '@/utils/awsS3Utils';
 
 class PostRepositoryImpl implements PostRepository {
 	store = awsS3Utils;
+	path = 'posts/';
 	postExtension = '.md';
 
 	async getPost(postName: string): Promise<Post> {
-		const response = await this.store.getResource(`posts/${postName}${this.postExtension}`);
+		const response = await this.store.getResource(`${this.path}${postName}${this.postExtension}`);
 		if (response) {
 			const postContent = await response?.Body?.transformToString();
 			return { postName, postContent: postContent || '' };
 		} else {
-			return { postName: `posts/${postName}${this.postExtension}`, postContent: 'no path' };
+			return { postName: `${this.path}${postName}${this.postExtension}`, postContent: 'no path' };
 		}
 	}
 
 	async getPosts() {
-		const response = await this.store.getResources('posts/');
+		const response = await this.store.getResources(this.path);
+
 		if (response?.Contents) {
 			return {
 				posts: response.Contents.map((resource) => ({
 					lastModifed: resource.LastModified!,
-					title: resource.Key?.replace(`${this.postExtension}`, '')!,
-				})).sort((a, b) => b.lastModifed.getTime() - a.lastModifed.getTime()),
-				totalCount: response.KeyCount!,
+					title: this.remainOnlyTitleFromKey(resource.Key!),
+				}))
+					.filter((post) => !!post.title)
+					.sort((a, b) => b.lastModifed.getTime() - a.lastModifed.getTime()),
+				/**
+				 * posts/ 폴더 자체도 KeyCount 에 포함되므로 폴더를 제외한 숫자
+				 */
+				totalCount: response.KeyCount! - 1,
 			};
 		}
+	}
+
+	remainOnlyTitleFromKey(key: string): string {
+		const pathRegularExpression = new RegExp(this.path);
+		const postExensionRegularExpression = new RegExp(this.postExtension);
+		const newKey = key.replace(pathRegularExpression, '').replace(postExensionRegularExpression, '');
+
+		return newKey;
 	}
 }
 
