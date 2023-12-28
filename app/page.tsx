@@ -1,12 +1,12 @@
+import Balls from '@/components/three/Balls';
 import PostRepositoryImpl from '@/repository/PostRepositoryImpl';
-import PostMetaListComp from '@/components/PostMetaListComp';
 
 export default async function Home() {
-  const posts = await PostRepositoryImpl.getPosts();
-  
-  return (
-    <div>
-      {!!posts ? <PostMetaListComp posts={posts} /> : <>Loading...</>}
-    </div>
-  )
+	const { totalCount = 0 } = (await PostRepositoryImpl.getPosts()) || {};
+
+	return (
+		<div className='w-full h-full absolute left-0 top-0'>
+			<Balls count={totalCount} />
+		</div>
+	);
 }

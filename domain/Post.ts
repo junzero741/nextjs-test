@@ -1,6 +1,6 @@
-interface Post {
-  postName: string;
-  postContent: string;
-}
+type Post = {
+	postName: string;
+	postContent: string;
+};
 
 export default Post;
