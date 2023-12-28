@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-ul, ol {
-  list-style: initial;
+ul,
+ol {
+	list-style: initial;
 }
