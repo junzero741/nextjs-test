@@ -1,10 +1,3 @@
-
-
 export default async function Laboratory() {
-  
-  return (
-    <div>
-      lab
-    </div>
-  )
+	return <div>lab</div>;
 }

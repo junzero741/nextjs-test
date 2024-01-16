@@ -1,11 +1,4 @@
-import {
-	GetObjectCommandOutput,
-	GetObjectCommand,
-	ListObjectsV2Command,
-	S3Client,
-	StorageClass,
-	ListObjectsV2CommandOutput,
-} from '@aws-sdk/client-s3';
+import { GetObjectCommandOutput, GetObjectCommand, ListObjectsV2Command, S3Client, ListObjectsV2CommandOutput } from '@aws-sdk/client-s3';
 
 const s3Client = new S3Client({
 	region: process.env.S3_REGION!,
@@ -31,13 +24,6 @@ const getResource: GetResource = async (path) => {
 	}
 };
 
-type Resource = {
-	Key?: string;
-	LastModified?: Date;
-	ETag?: string;
-	Size?: number;
-	StorageClass?: StorageClass;
-};
 type GetResources = (directoryPath: string) => Promise<ListObjectsV2CommandOutput | undefined>;
 
 const getResources: GetResources = async (directoryPath) => {
