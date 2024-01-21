@@ -10,6 +10,11 @@
       "StackName": "amplify-junzeroblog-dev-135408",
       "StackId": "arn:aws:cloudformation:ap-northeast-2:160544392867:stack/amplify-junzeroblog-dev-135408/1d2f33f0-b819-11ee-84b1-02659ef7a096",
       "AmplifyAppId": "dsxr6r52322xq"
+    },
+    "categories": {
+      "api": {
+        "junzeroblog": {}
+      }
     }
   }
 }
