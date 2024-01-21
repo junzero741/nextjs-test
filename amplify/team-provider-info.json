@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-junzeroblog-dev-135408-authRole",
+      "UnauthRoleArn": "arn:aws:iam::160544392867:role/amplify-junzeroblog-dev-135408-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::160544392867:role/amplify-junzeroblog-dev-135408-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-junzeroblog-dev-135408-deployment",
+      "UnauthRoleName": "amplify-junzeroblog-dev-135408-unauthRole",
+      "StackName": "amplify-junzeroblog-dev-135408",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:160544392867:stack/amplify-junzeroblog-dev-135408/1d2f33f0-b819-11ee-84b1-02659ef7a096",
+      "AmplifyAppId": "dsxr6r52322xq"
+    },
+    "categories": {
+      "api": {
+        "junzeroblog": {}
+      }
+    }
+  }
+}
