@@ -16,7 +16,7 @@ applications:
             - env | grep -e S3_ >> .env.production
             - pnpm build
       artifacts:
-        baseDirectory: .next
+        baseDirectory: apps/blog/.next
         files:
           - '**/*'
         discard-paths: yes
