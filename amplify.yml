@@ -1,9 +1,9 @@
 version: 1
 applications:
   - appRoot: apps/blog
-    # env:
-    #   variables:
-    #     key: value
+    env:
+      variables:
+        key: value
     frontend:
       buildPath: / # Run install and build from the monorepo project root
       phases:
