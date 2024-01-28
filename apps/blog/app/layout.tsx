@@ -7,6 +7,16 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: '정준영',
+	openGraph: {
+		type: "website",
+		url: "https://www.junyoung.site/",
+		title: "정준영",
+		description: "개발자 정준영의 기록",
+		siteName: "정준영",
+		// images: [{
+		// 	url: "https://example.com/og.png",
+		// }],
+	}
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

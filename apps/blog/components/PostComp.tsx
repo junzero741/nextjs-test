@@ -17,10 +17,14 @@ const marked = new Marked(
 
 export default function PostComp({ post }: { post: Post }) {
 	const html = marked.parse(post.postContent || '');
+	const title = post.postName.replaceAll('-', ' ');
 
 	return (
 		<div>
-			<PostTitle>{post.postName}</PostTitle>
+			<div className='py-4 mb-10 border-b-4 border-gray-900'>
+				<PostTitle>{title}</PostTitle>
+				<div className='text-sm text-gray-500'>작성일: {post.publishedAt.toLocaleDateString()}</div>
+			</div>
 			<div className='markdown-body py-4' dangerouslySetInnerHTML={{ __html: html }} />
 		</div>
 	);
@@ -30,8 +34,6 @@ type PostTitleProps = {} & JSX.IntrinsicElements['div'];
 
 function PostTitle({ children }: PostTitleProps) {
 	return (
-		<div className='py-4 border-b-4 font-bold border-black'>
-			<h1 className='text-4xl'>{children}</h1>
-		</div>
+		<h1 className='text-4xl font-bold'>{children}</h1>
 	);
 }

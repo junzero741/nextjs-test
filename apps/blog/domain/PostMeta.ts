@@ -1,5 +1,4 @@
 type PostMeta = {
-	lastModifed: Date;
 	title: string;
 };
 

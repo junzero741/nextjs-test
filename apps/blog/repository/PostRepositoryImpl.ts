@@ -10,10 +10,11 @@ class PostRepositoryImpl implements PostRepository {
 	async getPost(postName: string): Promise<Post> {
 		const response = await this.store.getResource(`${this.path}${postName}${this.postExtension}`);
 		if (response) {
+			const publishedAt = new Date(response.Metadata?.['published-at'] || 0);
 			const postContent = await response?.Body?.transformToString();
-			return { postName, postContent: postContent || '' };
+			return { postName, postContent: postContent || '', publishedAt: publishedAt};
 		} else {
-			return { postName: `${this.path}${postName}${this.postExtension}`, postContent: 'no path' };
+			return { postName: `${this.path}${postName}${this.postExtension}`, postContent: 'post not found', publishedAt: new Date(0) };
 		}
 	}
 
