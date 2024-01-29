@@ -5,7 +5,7 @@ export default async function Laboratory() {
 		<div>
 			<ul>
 				<li>
-					<Link href='/laboratory/monorepo'>사이트 모노레포전환</Link>
+					<Link href='/laboratory/og-image-test'>OG이미지 테스트</Link>
 				</li>
 			</ul>
 		</div>

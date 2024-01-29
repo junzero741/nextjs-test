@@ -1,6 +1,6 @@
 import Post from '@/domain/Post';
 import PostRepository from './PostRepository';
-import awsS3Utils from '@/utils/awsS3Utils';
+import awsS3Utils from '@/utils/awsS3';
 
 class PostRepositoryImpl implements PostRepository {
 	store = awsS3Utils;

@@ -1,6 +1,6 @@
 import Post from '@/domain/Post';
 import PostMeta from '@/domain/PostMeta';
-import { AwsS3Utils } from '@/utils/awsS3Utils';
+import { AwsS3Utils } from '@/utils/awsS3';
 
 export default interface PostRepository {
 	store: AwsS3Utils;
