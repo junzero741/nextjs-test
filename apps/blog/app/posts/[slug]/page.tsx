@@ -20,7 +20,9 @@ export async function generateMetadata(
 	const parentTitle = (await parent).title?.absolute;
 	const title = `${post.postName.replaceAll('-', ' ')} - ${parentTitle}`;
 	const previousImages = (await parent).openGraph?.images || []
-	const image = await fetch(`${DOMAIN.origin}/api/og?title=${title}`);
+
+	// TODO : 한글 인코딩 문제 해결
+	// const image = await fetch(`${DOMAIN.origin}/api/og?title=${title}`);
 	
   return {
     title: title,
@@ -28,7 +30,7 @@ export async function generateMetadata(
 			title: title,
 			type: 'article',
 			publishedTime: post.publishedAt.toISOString(),
-			images: [image, ...previousImages],
+			images: [...previousImages],
 		}
   }
 }
