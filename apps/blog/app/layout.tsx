@@ -7,15 +7,16 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
 	title: '정준영',
+	description: '개발자 정준영의 기록',
 	openGraph: {
 		type: "website",
 		url: "https://www.junyoung.site/",
 		title: "정준영",
 		description: "개발자 정준영의 기록",
 		siteName: "정준영",
-		// images: [{
-		// 	url: "https://example.com/og.png",
-		// }],
+		images: [{
+			url: "https://s3.ap-northeast-2.amazonaws.com/blog.resource/images/blog_thumb_001.png",
+		}],
 	}
 };
 
