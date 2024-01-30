@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 		description: "개발자 정준영의 기록",
 		siteName: "정준영",
 		images: [{
-			url: "https://s3.ap-northeast-2.amazonaws.com/blog.resource/images/blog_thumb_001.png",
+			url: "https://s3.ap-northeast-2.amazonaws.com/blog.resource/images/blog_thumb_002.png",
 		}],
 	}
 };
