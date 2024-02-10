@@ -2,10 +2,12 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import Link from 'next/link';
+import { DOMAIN } from '@/utils/constants';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+	metadataBase: new URL(DOMAIN.origin),
 	title: '정준영',
 	description: '개발자 정준영의 기록',
 	openGraph: {

@@ -4,11 +4,11 @@ import { twMerge } from "tailwind-merge";
 
 export default function PostMetaListCompV2({ posts }: { posts: PostMetaV2[] }) {
   return (
-          <div className='flex flex-col'>
-                  {posts.map((post, idx) => (
-                    <PostMetaListItemComp key={post.id} post={post} isLast={idx === posts.length - 1} />
-                  ))}
-          </div>
+    <div className='flex flex-col'>
+            {posts.map((post, idx) => (
+              <PostMetaListItemComp key={post.id} post={post} isLast={idx === posts.length - 1} />
+            ))}
+    </div>
   );
 }
 
@@ -20,7 +20,7 @@ function PostMetaListItemComp({ post, isLast }: { post: PostMetaV2, isLast: bool
         !isLast && 'border-b border-black'
         )}>
           <div>{post.title}</div>
-          <div>작성일 : {post.created_at}</div>
+          <div className={'text-sm text-gray-500'}>작성일 : {new Date(post.created_at).toLocaleDateString()}</div>
     </Link>
   );
 }
