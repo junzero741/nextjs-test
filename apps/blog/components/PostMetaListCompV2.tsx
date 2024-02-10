@@ -13,15 +13,12 @@ export default function PostMetaListCompV2({ posts }: { posts: PostMetaV2[] }) {
 }
 
 function PostMetaListItemComp({ post, isLast }: { post: PostMetaV2, isLast: boolean }) {
-       const title = post.title.replaceAll('', ' ');
-
   return (
-    <Link href={`/posts/${post.id}`} className={
+    <Link href={`./posts/${post.id}`} className={
       twMerge(
         'font-semibold text-lg py-8 hover:text-gray-500',
         !isLast && 'border-b border-black'
         )}>
-          {title}
           <div>{post.title}</div>
           <div>작성일 : {post.created_at}</div>
     </Link>
