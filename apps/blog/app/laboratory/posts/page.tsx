@@ -1,11 +1,8 @@
-import { DOMAIN } from '@/utils/constants';
-
-import {fetchAs} from '@repo/my-utils'
-import {PostMetaV2} from '@/domain/PostMeta';
 import PostMetaListCompV2 from '@/components/PostMetaListCompV2';
+import { getPosts } from '@/utils/data';
 
 export default async function Posts() {
-  const posts = await fetchAs<PostMetaV2[]>(`${DOMAIN.origin}/api/posts`);
+  const posts = await getPosts();
 
   return <div>{posts ? <PostMetaListCompV2 posts={posts} /> : <>Loading...</>}</div>;
 }
