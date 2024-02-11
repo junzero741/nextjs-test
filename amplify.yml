@@ -11,6 +11,7 @@ applications:
         build:
           commands:
             - env | grep -e S3_ >> .env.production
+            - env | grep -e SUPABASE_ >> .env.production
             - cp .env.production apps/blog/.env.production
             - pnpm build
       artifacts:
