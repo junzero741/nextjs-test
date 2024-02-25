@@ -1,0 +1,10 @@
+
+
+.ProseMirror {
+  border: 1px solid black;
+    width: 640px;
+    @media (max-width: 768px) {
+      width: 320px;
+  }
+}  
+
