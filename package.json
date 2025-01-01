@@ -6,8 +6,7 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "web-start": "pnpm --filter blog start",
-    "editor-dev": "pnpm --filter @repo/editor dev"
+    "web-start": "pnpm --filter blog start"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
@@ -15,7 +14,6 @@
     "@repo/webpack-config": "workspace:*",
     "@repo/my-utils": "workspace:*",
     "@repo/ui": "workspace:*",
-    "@repo/editor": "workspace:*",
     "prettier": "^3.1.1",
     "turbo": "latest"
   },
