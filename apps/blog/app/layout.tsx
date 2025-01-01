@@ -38,7 +38,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 							<nav className='ml-auto text-sm font-medium space-x-6'>
 								<Link href='/posts'>Posts</Link>
 								<Link href='/about'>About</Link>
-								<Link href='/laboratory'>Laboratory</Link>
 							</nav>
 						</div>
 					</header>

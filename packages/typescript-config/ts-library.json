@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "target": "es2016",   
+    "module": "commonjs",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "moduleResolution": "NodeNext"
+  },
+  "include": ["src/**/*"]
+}
